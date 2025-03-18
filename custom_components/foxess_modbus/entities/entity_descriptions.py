@@ -854,7 +854,7 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.MEASUREMENT,
             native_unit_of_measurement="kW",
             scale=scale,
-            round_to=0.01,
+            round_to=0.001,
             validate=[Range(-100, 100)],
         )
 
@@ -905,7 +905,7 @@ def _h3_current_voltage_power_entities() -> Iterable[EntityFactory]:
             native_unit_of_measurement="kvar",
             icon="mdi:export",
             scale=0.001,
-            round_to=0.01,
+            round_to=0.001,
             # Negative = charging batteries
             validate=[Range(-100, 100)],
         )
@@ -1520,7 +1520,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL,
             native_unit_of_measurement="kWh",
             icon="mdi:solar-power",
-            scale=0.1,
+            scale=0.01,
             signed=False,
             validate=[Min(0)],
         )
@@ -1544,7 +1544,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL_INCREASING,
             native_unit_of_measurement="kWh",
             icon="mdi:solar-power",
-            scale=0.1,
+            scale=0.01,
             signed=False,
             validate=[Range(0, 1000)],
         )
@@ -1568,7 +1568,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL,
             native_unit_of_measurement="kWh",
             icon="mdi:battery-arrow-up-outline",
-            scale=0.1,
+            scale=0.01,
             signed=False,
             validate=[Min(0)],
         )
@@ -1606,7 +1606,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL_INCREASING,
             native_unit_of_measurement="kWh",
             icon="mdi:battery-arrow-up-outline",
-            scale=0.1,
+            scale=0.01,
             validate=[Range(0, 100)],
         )
 
@@ -1628,7 +1628,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL,
             native_unit_of_measurement="kWh",
             icon="mdi:battery-arrow-down-outline",
-            scale=0.1,
+            scale=0.01,
             signed=False,
             validate=[Min(0)],
         )
@@ -1666,8 +1666,8 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL_INCREASING,
             native_unit_of_measurement="kWh",
             icon="mdi:battery-arrow-down-outline",
-            scale=0.1,
             validate=[Range(0, 100)],
+            scale=0.01,
         )
 
     yield _battery_discharge_today(
@@ -1689,7 +1689,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL,
             native_unit_of_measurement="kWh",
             icon="mdi:transmission-tower-import",
-            scale=0.1,
+            scale=0.01,
             signed=False,
             validate=[Min(0)],
         )
@@ -1727,7 +1727,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL_INCREASING,
             native_unit_of_measurement="kWh",
             icon="mdi:transmission-tower-import",
-            scale=0.1,
+            scale=0.01,
             validate=[Range(0, 1000)],
         )
 
@@ -1750,7 +1750,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL,
             native_unit_of_measurement="kWh",
             icon="mdi:transmission-tower-export",
-            scale=0.1,
+            scale=0.01,
             signed=False,
             validate=[Min(0)],
         )
@@ -1788,7 +1788,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL_INCREASING,
             native_unit_of_measurement="kWh",
             icon="mdi:transmission-tower-export",
-            scale=0.1,
+            scale=0.01,
             validate=[Range(0, 1000)],
         )
 
@@ -1811,7 +1811,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL,
             native_unit_of_measurement="kWh",
             icon="mdi:export",
-            scale=0.1,
+            scale=0.01,
             signed=False,
             validate=[Min(0)],
         )
@@ -1835,7 +1835,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL_INCREASING,
             native_unit_of_measurement="kWh",
             icon="mdi:export",
-            scale=0.1,
+            scale=0.01,
             # unsure if this actually goes negative
             validate=[Range(-100, 100)],
         )
@@ -1859,7 +1859,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL,
             native_unit_of_measurement="kWh",
             icon="mdi:import",
-            scale=0.1,
+            scale=0.01,
             signed=False,
             validate=[Min(0)],
         )
@@ -1883,7 +1883,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL_INCREASING,
             native_unit_of_measurement="kWh",
             icon="mdi:import",
-            scale=0.1,
+            scale=0.01,
             # unsure if this actually goes negative
             validate=[Range(-1000, 1000)],
         )
@@ -1907,7 +1907,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL,
             native_unit_of_measurement="kWh",
             icon="mdi:home-lightning-bolt-outline",
-            scale=0.1,
+            scale=0.01,
             signed=False,
             validate=[Min(0)],
         )
@@ -1950,7 +1950,7 @@ def _inverter_entities() -> Iterable[EntityFactory]:
             state_class=SensorStateClass.TOTAL_INCREASING,
             native_unit_of_measurement="kWh",
             icon="mdi:home-lightning-bolt-outline",
-            scale=0.1,
+            scale=0.01,
             # unsure if this actually goes negative
             validate=[Range(-1000, 1000)],
         )
